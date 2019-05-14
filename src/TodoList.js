@@ -58,6 +58,22 @@ class TodoList extends React.Component {
     // this.setState({list})
   }
 
+  // 下方 ul 中的 li 內容，其實可以抽離到此處函數，但本次先不做優化
+  // getTodoItems () {
+  //   return (
+  //     this.state.list.map((node, index) => {
+  //       return (
+  //         <TodoItem 
+  //           deleteItem={this.handleItemDelete}
+  //           key={index}
+  //           content={node}
+  //           index={index}
+  //         />
+  //       )
+  //     })
+  //   )
+  // }
+
   render () {
     return (
     // JSX 當中可以透過 {} 書寫表達式
@@ -82,7 +98,7 @@ class TodoList extends React.Component {
               // --- 上述為組件未拆分前寫法，下述則為拆分後寫法 ---
               return (
                 <TodoItem 
-                  delete={this.handleItemDelete}
+                  deleteItem={this.handleItemDelete}
                   key={index}
                   content={node}
                   index={index}
