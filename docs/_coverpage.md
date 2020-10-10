@@ -1,12 +1,10 @@
 ![logo](_media/icon.svg)
 
-# docsify <small>3.5</small>
+# Docsify Pitt <small>2020</small>
 
-> A magical documentation site generator.
+> Story and Code.
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
+- 記錄工作與學習使用的筆記
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/wuzhe0912/docsify-note)
 [Get Started](#docsify)

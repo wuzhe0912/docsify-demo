@@ -1,3 +1,3 @@
-# Headline
+# Docsify
 
-> An awesome project.
+> 簡潔易用的文件整理工具

@@ -1,10 +1,10 @@
 window.$docsify = {
-  name: '',
-  repo: '',
+  name: 'docsify',
+  repo: 'https://github.com/wuzhe0912/docsify-note',
   // open coverpage
   coverpage: true,
   logo: '/_media/icon.svg',
-  name: 'docsify123',
-  // coverpage: ['/', '/zh-cn/'],
+  loadNavbar: true,
+  loadSidebar: true,
+  auto2top: true,
 };
-console.log(123);
