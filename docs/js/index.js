@@ -7,4 +7,6 @@ window.$docsify = {
   loadNavbar: true,
   loadSidebar: true,
   auto2top: true,
+  maxLevel: 4,
+  subMaxLevel: 2,
 };
