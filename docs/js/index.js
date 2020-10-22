@@ -4,9 +4,15 @@ window.$docsify = {
   // open coverpage
   coverpage: true,
   logo: '/_media/icon.svg',
-  loadNavbar: true,
   loadSidebar: true,
   auto2top: true,
   maxLevel: 4,
   subMaxLevel: 2,
+  tabs: {
+    persist    : true,      // default
+    sync       : true,      // default
+    theme      : 'classic', // default
+    tabComments: true,      // default
+    tabHeadings: true       // default
+  }
 };
