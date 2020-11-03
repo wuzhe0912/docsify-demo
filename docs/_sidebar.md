@@ -15,6 +15,7 @@
 
   - [Initial Project](vue2-initial-project.md)
   - [Google Maps API](vue2-google-maps.md)
+  - [第三方登入 (Firebase)](vue2-social-login-firebase.md)
 
 - Vue.js - 3.x
 
@@ -37,8 +38,13 @@
   - [Next 主題](hexo-themes-next.md)
   - [自動部署](hexo-auto-deploy.md)
 
+- 前端性能優化
+
+  - [測試工具](webpage-optimization-tools.md)
+
 - 前端面試
 
+  - [面試反饋記錄 - I](Interview-feedback-I.md)
   - [HTML - I](Interview-frontend-html-I.md)
   - [CSS - I](Interview-frontend-css-I.md)
   - [JavaScript - I](Interview-frontend-javascript-I.md)
@@ -47,3 +53,5 @@
   - [網際網路協議](Interview-frontend-https.md)
   - [程式碼練習 - I](Interview-frontend-code-I.md)
   - [程式碼練習 - II](Interview-frontend-code-II.md)
+  - [程式碼練習 - III](Interview-frontend-code-III.md)
+  - [程式碼練習 - IV](Interview-frontend-code-IV.md)

@@ -192,3 +192,116 @@ console.log(3);
 
 // 依序印出 1 3 2
 ```
+
+## 8. 請簡單說明 JS 的原型。
+我們使用原型的目的，在於建立一個樣板或者說藍圖，透過這個樣板，我們放入屬性或方法，這樣可以快速建立 instance(實體)，e.g.：
+```
+function Person (name, type) {
+  this.name = name
+  this.type = type
+}
+
+var boy = new Person('pitt', 'boy')
+var girl = new Person('kumi', 'girl')
+```
+另外，prototype 也可以優化 function 佔用的記憶體空間，e.g.：
+```
+function Person (name, type) {
+  this.name = name
+  this.type = type
+
+  this.say = function () {
+    console.log(`${this.name} is a ${this.type} say Hi!`)
+  }
+}
+
+var boy = new Person('pitt', 'boy')
+var girl = new Person('kumi', 'girl')
+
+console.log(boy.say === girl.say) // false
+```
+雖然他們呼叫同一個函式，但卻各自佔用一個空間，在專案小的時候，可能差異不大，但大型專案或多或少會影響效能，因此可以透過 function prototype 來優化
+```
+function Person (name, type) {
+  this.name = name
+  this.type = type
+}
+
+Person.prototype.say = function () {
+  console.log(`${this.name} is a ${this.type} say Hi!`)
+}
+
+var boy = new Person('pitt', 'boy')
+var girl = new Person('kumi', 'girl')
+
+console.log(boy.say === girl.say) // true
+```
+
+## 9. 簡單聊一下繼承。
+- ES5 的寫法，使用 Object.create() e.g.：
+```
+function Person (name, type) {
+  this.name = name
+  this.type = type
+}
+
+var boy = new Person('pitt', 'boy')
+var girl = new Person('kumi', 'girl')
+
+var man = Object.create(boy)
+console.log(man)
+```
+對 man 這個變數來說，它繼承到的原型 Person 只是一個空物件，但因為原型練的特性，他會向上找 `__proto__` 的內容，這時候就會找到屬性與方法，e.g.：
+```
+console.log(man.name) // pitt
+console.log(man.type) // boy
+```
+- 在 ES6 中引入新的寫法 class，e.g.：
+```
+class Player {
+  // 使用 function constructor (建構式)
+  constructor (playerName, hp) {
+    this.playerName = playerName
+    this.hp = hp
+  }
+
+  playerStatus () {
+    console.log(`玩家名稱：${this.playerName}，玩家血量：${this.hp}`)
+  }
+}
+
+var Pitt = new Player('Pitt', 200)
+Pitt.playerStatus()
+```
+- 子類別也可以透過 extends && super 去繼承父類別的方法與屬性，e.g.：
+```
+// father
+class Player {
+  // 使用 function constructor (建構式)
+  constructor (playerName, hp) {
+    this.playerName = playerName
+    this.hp = hp
+  }
+
+  playerStatus () {
+    console.log(`玩家名稱：${this.playerName}，玩家血量：${this.hp}`)
+  }
+}
+var Pitt = new Player('Pitt', 200)
+Pitt.playerStatus()
+
+// son
+class BeginnerPlayer extends Player {
+  constructor (playerName, hp, job) {
+    super(playerName, hp)
+    this.job = job
+  }
+
+  playerJob () {
+    console.log(`玩家：${this.playerName}，血量：${this.hp}，初始職業為${this.job}`)
+  }
+}
+
+var Lisa = new BeginnerPlayer('Lisa', 300, '初心者')
+Lisa.playerJob()
+```

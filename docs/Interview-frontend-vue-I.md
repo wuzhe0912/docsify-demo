@@ -29,6 +29,10 @@ ViewModel => 前端(改由前端控制 router)
 4. 最後，再根據已經改變的虛擬`DOM`，重新渲染頁面的`DOM`結構，達到雙向綁定的目的。
 
 ## 2.1 請描述 v-model / v-show / v-if / v-html / v-bind 的用途
+-  `v-model`：資料雙向綁定，當改變資料的同時，隨即驅動改變`template`上渲染的內容。
+-  `v-if` & `v-show`：兩者都是條件渲染，透過判斷條件決定是否顯示，不過差別在於`v-if`的判斷會銷毀節點，整個`DOM`在`false`狀態下會被移除，但`v-show`則僅是使用`css`的`display: none;`屬性來隱藏元素。
+-  `v-html`：如果資料回傳的內容中帶有`HTML`的`tag`時，可以透過`v-html`這個指令來渲染，例如顯示`Markdown`語法又或是對方直接回傳含有`img`標籤的圖片路徑。
+-  `v-bind`：動態綁定，常見於綁定`class`或連結、圖片等。當通過`v-bind`綁定`class`後，可以透過資料變動，來決定該`class`樣式是否被綁定，同理`api`回傳的圖片路徑、連結網址，也能透過綁定的形式來維持動態更新。
 
 ## 3. 試說明 Vue 的生命週期
 1. `beforeCreate`&`created`
@@ -71,9 +75,14 @@ ViewModel => 前端(改由前端控制 router)
 2. `router.push`，主要透過`methods`來執行跳轉到對應頁面，同時也可以在其中的`query`埋下參數，方便跳轉後的頁面直接調用。
 
 ## 9. 簡單解釋一下 Vuex 的原理
-在`Vuex`當中，`state`會存放初始化的資料，當`component`呼叫`uex`中寫好的函式，首先會到`actions`找對應的函式，這時會去呼叫`api`的資料，當然如果`component`呼叫時有傳入參數，那這個參數就透過`payload`傳入函式。當`api`的資料取得後，除了回傳給`component`，也透過`commit`的方式來改變`mutations`內的函式，而`mutations`這時就會將傳來的資料賦值給`state`，進而改變狀態。
+在`Vuex`當中，`state`會存放初始化的資料，當`component`呼叫`vuex`中寫好的函式，首先會到`actions`找對應的函式，這時會去呼叫`api`的資料，當然如果`component`呼叫時有傳入參數，那這個參數就透過`payload`傳入函式。當`api`的資料取得後，除了回傳給`component`，也透過`commit`的方式來改變`mutations`內的函式，而`mutations`這時就會將傳來的資料賦值給`state`，進而改變狀態。
 
 ## 9.1 Vuex 有哪些屬性，請分別描述
+1. `actions`：將資料透過`commit`提交，若有額外參數則傳入`payload`。
+2. `mutations`：接收到傳過來的資料後，賦值給`state`。
+3. `state`：保存全域使用的變數狀態，方便`component`可以直接使用。
+4. `getters`：可以理解為`vuex`的`computed`，只是將保存的值放在`vuex`計算。
+5. `modules`：讓`vuex`可以更為結構化，需要聲明`namespaced: true`，讓路徑根據模組自動調整命名，但在應用上需要注意路徑名稱，譬如：`this.$store.dispatch('user/setCurrentChannel', this.isCurrentChannel)`，同時在根目錄上的`vuex`需要添加`modules: { user: user }`。
 
 ## 10. 什麼情境下，需使用 Vuex？
 `Vue`的專案中，通常會有多個`component`組成，尤其專案越大組成結構就越複雜，有些資料會是多個頁面需要共用，這個時候不可能仰賴父子組件傳值，萬一組件和組件之間隔了好幾層，那效益就太差了，這時通常就會抽離到 `Vuex`進行狀態管理。

@@ -95,12 +95,10 @@ yarn add vuelidate
 yarn add vuedraggable
 ```
 
-### 預處理器
-```
-// pug
-yarn add vue-cli-plugin-pug --dev
+### 模板語言 & 預處理器
+- `PUG`&`SCSS`
 
-// scss
+```
 yarn add vue-cli-plugin-pug sass sass-loader --dev
 ```
 
