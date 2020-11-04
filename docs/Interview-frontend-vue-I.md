@@ -78,7 +78,7 @@ ViewModel => 前端(改由前端控制 router)
 在`Vuex`當中，`state`會存放初始化的資料，當`component`呼叫`vuex`中寫好的函式，首先會到`actions`找對應的函式，這時會去呼叫`api`的資料，當然如果`component`呼叫時有傳入參數，那這個參數就透過`payload`傳入函式。當`api`的資料取得後，除了回傳給`component`，也透過`commit`的方式來改變`mutations`內的函式，而`mutations`這時就會將傳來的資料賦值給`state`，進而改變狀態。
 
 ## 9.1 Vuex 有哪些屬性，請分別描述
-1. `actions`：將資料透過`commit`提交，若有額外參數則傳入`payload`。
+1. `actions`：將資料透過`commit`提交，若有額外參數(官方常用命名`payload`)也可以傳入。
 2. `mutations`：接收到傳過來的資料後，賦值給`state`。
 3. `state`：保存全域使用的變數狀態，方便`component`可以直接使用。
 4. `getters`：可以理解為`vuex`的`computed`，只是將保存的值放在`vuex`計算。

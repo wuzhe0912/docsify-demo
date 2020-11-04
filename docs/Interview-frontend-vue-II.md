@@ -31,7 +31,16 @@
 ## 6. 什麼是 Vue.use()?
 如果我們有安裝依賴在`Vue`的套件，可以透過`Vue.use()`的方法，把套件註冊到全域環境，讓其他`component` 可以直接使用，而不需要每頁都`import`該插件。
 
-## 7. Angular vs React vs Vue 差異性？
+## 7. Vue 有幾種導航守衛？
+- `router.beforeEach`：註冊在全域的`router`檢測，`to`代表要前往的`router`，`from`則是來自哪裡？`next`選擇調用的方法，常見是選擇前往某頁面或是選擇中斷。
+- `router.beforeEnter`：參數同`router.beforeEach`相同，但使用在單一的`router`內。
+- 下述守衛則較少使用：
+  - `router.beforeResolve`
+  - `router.beforeRouteEnter`
+  - `router.beforeRouteUpdate`
+  - `router.beforeRouteLeave`
+
+## 8. Angular vs React vs Vue 差異性？
 - 結構，雖然三者都被稱為框架，但從嚴謹角度來看：
   - `Angular`可以被稱為框架，Google 的團隊提供了各種內置 `API`，包含表單驗證、狀態管理、路由等等功能，而另外兩者更接近為`Library`，因此最優。
   - `React`早期幾乎是什麼都沒有提供，後來`React Router`、`Redux`都是社群貢獻的，`Vue`則是提供一部分，包括狀態管理、路由。但隨著時間推進，兩者的社群都相當程度完善了結構。
