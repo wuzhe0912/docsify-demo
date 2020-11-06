@@ -226,3 +226,61 @@ Ans：
 ```
 目前剩餘存款：6000
 ```
+
+## 9. 如果要複製一個物件(object or array)可以使用哪些方法？
+因為要避免傳址的問題，導致記憶體中相同位址的內容互相覆蓋影響，因此可以根據資料結構決定使用淺拷貝或是深拷貝：
+
+- 資料結構為一層時，使用淺拷貝：
+- `slice method`：
+
+```
+var array = [2, 4, 6]
+var newArray = array.slice(0) // 括號中參數決定從第幾個 index 開始複製
+console.log(newArray) // [2, 4, 6]
+
+array[1] = 40
+console.log(array) // [2, 40, 6]
+console.log(newArray) // [2, 4, 6]
+```
+- 展開運算符：
+
+```
+var array = [5, 10, 15]
+var newArray = [...array]
+console.log(newArray) // [5, 10, 15]
+
+array[2] = 50
+console.log(array) // [5, 10, 50]
+console.log(newArray) // [5, 10, 15]
+```
+- 資料結構為多層時，使用深拷貝：
+- 使用`Lodash`套件：
+
+```
+var object = {
+  name: 'Amy',
+  player: {
+    name: 'Betty'
+  }
+}
+var newObject = _.cloneDeep(object)
+
+object.player.name = 'Alisa'
+console.log(object.player.name) // 'Alisa'
+console.log(newObject.player.name) // 'Betty'
+```
+
+## 10. 網址中取特定的值
+```
+// const url = location.href
+console.log(url)
+// 假設拿到 http://127.0.0.1:5501/index.html?uid=9487&name=qwert
+
+// 若我要取 uid 和 name
+// 使用第一個參數作為分割起始點
+const target = url.split('?uid=')[1]
+// 將起始點後的值，再用第二個參數進行分割，塞入陣列
+const subTarget = url.split('?uid=')[1].split('&name=')
+
+console.log(subTarget)
+```

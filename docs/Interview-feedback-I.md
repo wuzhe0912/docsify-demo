@@ -90,6 +90,31 @@ console.log(array) // [1, 2]
 console.log(newArray) // 3
 ```
 
+### 陣列中過濾重複值的做法，請分別使用ES5和ES6處理
+- `ES5`：
+
+使用`filter`：
+```
+const originArray = [10, 20, 'a', 20, 'b', 'c', 'a']
+const filterArray = originArray.filter((element, index, array) => {
+  // 查找陣列中第一個被找到的索引
+  return array.indexOf(element) === index
+})
+const repeatNumber = originArray.filter((element, index, array) => {
+  return array.indexOf(element) !== index
+})
+console.log(filterArray)  // [10, 20, 'a', 'b', 'c']
+console.log(repeatNumber) // [20, a]
+```
+
+- `ES6`：
+
+```
+const originArray = [10, 20, 'a', 20, 'b', 'c', 'a']
+const filterArray = [... new Set(originArray)]
+console.log(filterArray) // [10, 20, 'a', 'b', 'c']
+```
+
 ## Vue.js
 - `computed`和`watch`的差異？
 

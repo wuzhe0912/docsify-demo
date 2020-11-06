@@ -238,7 +238,8 @@ console.log(boy.say === girl.say) // true
 ```
 
 ## 9. 簡單聊一下繼承。
-- ES5 的寫法，使用 Object.create() e.g.：
+- `ES5`的寫法，使用`Object.create()`，e.g.：
+
 ```
 function Person (name, type) {
   this.name = name
@@ -251,12 +252,13 @@ var girl = new Person('kumi', 'girl')
 var man = Object.create(boy)
 console.log(man)
 ```
-對 man 這個變數來說，它繼承到的原型 Person 只是一個空物件，但因為原型練的特性，他會向上找 `__proto__` 的內容，這時候就會找到屬性與方法，e.g.：
+對`man`這個變數來說，它繼承到的原型`Person()`只是一個空物件，但因為原型練的特性，他會向上找 `__proto__` 的內容，這時候就會找到屬性與方法，e.g.：
 ```
 console.log(man.name) // pitt
 console.log(man.type) // boy
 ```
-- 在 ES6 中引入新的寫法 class，e.g.：
+- 在`ES6`中引入新的特性`class`，e.g.：
+
 ```
 class Player {
   // 使用 function constructor (建構式)
@@ -273,7 +275,8 @@ class Player {
 var Pitt = new Player('Pitt', 200)
 Pitt.playerStatus()
 ```
-- 子類別也可以透過 extends && super 去繼承父類別的方法與屬性，e.g.：
+- 子類別也可以透過`extends`&&`super`去繼承父類別的方法與屬性，e.g.：
+
 ```
 // father
 class Player {
