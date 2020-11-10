@@ -2,6 +2,10 @@
 
   - [JavaScript - I](Interview-frontend-javascript-I.md)
 
+- JavaScript：Prototype
+
+  - [Prototype](prototype-I.md)
+
 
 - HTML
 
