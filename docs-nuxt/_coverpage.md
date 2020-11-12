@@ -1,6 +1,6 @@
 ![logo](_media/icon.svg)
 
-# Front-end Interview <small>2020</small>
+# Docsify Nuxt.js <small>2020</small>
 
 > Story and Code.
 

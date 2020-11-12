@@ -1,6 +1,6 @@
 ![logo](_media/icon.svg)
 
-# Docsify Pitt <small>2020</small>
+# Docsify JavaScript <small>2020</small>
 
 > Story and Code.
 
