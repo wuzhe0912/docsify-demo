@@ -1,6 +1,6 @@
 ![logo](_media/icon.svg)
 
-# Docsify Nuxt.js <small>2020</small>
+# Vue.js / Nuxt.js <small>2020</small>
 
 > Story and Code.
 

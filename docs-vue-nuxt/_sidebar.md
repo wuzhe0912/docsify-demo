@@ -1,4 +1,4 @@
-- 手動部署環境
+- 手動部署環境(GCP)
 
   - [Initial Nuxt](nuxt-build-environment.md)
   - [架站準備(GCP)](nuxt-gcp-server.md)
