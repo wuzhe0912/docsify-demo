@@ -4,5 +4,5 @@
 
 ## 前端筆記
   * [JavaScript](https://docsify-pitt.netlify.app)
-  * [Nuxt.js](https://docsify-nuxt.netlify.app)
+  * [Vue.js / Nuxt.js](https://docsify-vue-nuxt.netlify.app)
   * [Front-end Interview](https://docsify-frontend-interview.netlify.app)

@@ -1,6 +1,6 @@
 # 關於 this
 
-> JavaScript 的 this 是什麼？
+> `JavaScript`的`this`是什麼？
 
 ## 全域環境(window)
 當`this`沒有做任何處理時，即代表瀏覽器的環境：

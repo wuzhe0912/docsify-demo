@@ -1,4 +1,4 @@
-# Vue.js / Nuxt.js
+# Docsify
 
 > 整理記錄`Vue.js`、`Nuxt.js`相關技術筆記
 

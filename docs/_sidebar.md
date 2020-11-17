@@ -11,15 +11,9 @@
   - [字符模板](es6-template-strings.md)
   - [ES Module](es6-es-module.md)
 
-- Vue.js - 2.x
+- Websocket
 
-  - [Initial Project](vue2-initial-project.md)
-  - [Google Maps API](vue2-google-maps.md)
-  - [第三方登入 (Firebase)](vue2-social-login-firebase.md)
-
-- Vue.js - 3.x
-
-  - [Composition API](vue3-composition-api.md)
+  - [Websocket 基礎聊天室應用](websocket-chat.md)
 
 - Hexo
 

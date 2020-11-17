@@ -6,19 +6,13 @@
 - `HTML(Pug)`：
 
 ```
-<div class="wrap">
-  <header class="header__wrap">
-    header
-  </header>
-  <main class="main__wrap">
-    <div class="sidebar">1</div>
-    <div class="main__content">2</div>
-    <div class="right__content">3</div>
-  </main>
-  <footer class="footer__wrap">
-    footer
-  </footer>
-</div>
+.wrap
+  .header__wrap headerText
+  main.main__wrap
+    .left 1
+    .content 2
+    .right 3
+  .footer__wrap footerText
 ```
 - `CSS`：
 
@@ -34,7 +28,7 @@
 .header__wrap,
 .footer__wrap {
   width: 100%;
-  background: rebeccapurple;
+  background: red;
 }
 
 .main__wrap {
